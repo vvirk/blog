@@ -70,3 +70,25 @@ export const postComment = (comment, id) => async dispatch => {
     console.log(e);
   }
 };
+
+export const addNewPost = (id, author, title, body, date) => async dispatch => {
+  try {
+    const data = {
+      title,
+      body,
+      id: +id,
+      author,
+      date,
+    };
+    const response = await fetch(urlPosts, {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    await response.json();
+  } catch (e) {
+    console.log(e);
+  }
+};
