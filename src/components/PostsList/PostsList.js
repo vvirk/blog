@@ -1,9 +1,7 @@
 import React from 'react';
 import { Post } from '../Post/Post';
 
-export const PostsList = props => {
-  const { posts } = props;
-  console.log(posts);
+export const PostsList = ({ posts }) => {
   return (
     <div>
       <ul>

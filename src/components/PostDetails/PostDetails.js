@@ -1,7 +1,7 @@
 import React from 'react';
 import { Preloader } from '../Preloader/Preloader';
 import { Comment } from '../Comment/Comment';
-//  import { AddComment } from '../AddComment/AddComment';
+import { AddCommentContainer } from '../../containers/AddCommentContainer';
 
 export class PostDetails extends React.Component {
   componentDidMount() {
@@ -19,7 +19,7 @@ export class PostDetails extends React.Component {
         <p>{post.author}</p>
         <p>{post.date}</p>
         <p>comments:</p>
-        {/* <AddComment /> */}
+        <AddCommentContainer />
         <ul>
           {post.comments
             ? post.comments.map(comment => (
