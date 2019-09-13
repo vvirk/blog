@@ -1,8 +1,9 @@
 import * as type from '../actions/actionTypes';
 
 export const initialState = {
-  posts: false,
   isFetching: false,
+  posts: false,
+  post: false,
 };
 export const reducer = (state = initialState, action) => {
   switch (action.type) {
@@ -10,6 +11,8 @@ export const reducer = (state = initialState, action) => {
       return { ...state, isFetching: action.isFetching };
     case type.ADD_POSTS:
       return { ...state, posts: action.posts };
+    case type.ADD_POST:
+      return { ...state, post: action.post };
     default:
       return state;
   }

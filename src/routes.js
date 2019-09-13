@@ -1,12 +1,12 @@
 import React from 'react';
 import { HashRouter as Router, Route } from 'react-router-dom';
-import { Posts } from './components/Posts/Posts';
-import { PostDetails } from './components/PostDetails/PostDetails';
+import { BlogContainer } from './containers/BlogContainer';
+import { PostDetailsContainer } from './containers/PostDetailsContainer';
 
 export const MainRouter = () => (
   <Router>
-    <Route path="/" exact component={Posts} />
-    <Route path="/details/:id" exact component={PostDetails} />
+    <Route path="/" exact component={BlogContainer} />
+    <Route path="/details/:id" exact component={PostDetailsContainer} />
   </Router>
 );
 
