@@ -9,7 +9,9 @@ export const Post = ({ id, title, body, author, date }) => (
     <h2 className={s.title}>{title}</h2>
     <div className={s.desc}>
       <p>{body}</p>
-      <Link className={s.link} to={`/details/${id}`}>read more</Link>
+      <Link className={s.link} to={`/details/${id}`}>
+        read more
+      </Link>
     </div>
     <div className={s.info}>
       <p className={s.infoItem}>{author}</p>

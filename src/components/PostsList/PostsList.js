@@ -6,10 +6,11 @@ import { Post } from '../Post/Post';
 import s from './styles/postsList.module.scss';
 
 export const PostsList = ({ posts }) => {
-  console.log(posts);
   return (
     <div>
-      <Link className={s.btn} to="/new">ADD POST</Link>
+      <Link className={s.btn} to="/new">
+        ADD POST
+      </Link>
       <ul className={s.list}>
         {posts
           ? posts.map(post => (

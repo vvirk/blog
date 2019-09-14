@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import * as moment from 'moment';
+import { addId } from '../../utils/addId';
 
 // styles
 import s from './styles/addNewPost.module.scss';
@@ -8,8 +9,6 @@ export const AddNewPost = ({ addNewPost, posts }) => {
   const author = useRef();
   const title = useRef();
   const body = useRef();
-  const lastPost = posts.length - 1;
-  const id = posts[lastPost] ? posts[lastPost].id + 1 : null;
   return (
     <div>
       <h2 className={s.title}>Create new post</h2>
@@ -26,7 +25,7 @@ export const AddNewPost = ({ addNewPost, posts }) => {
         type="button"
         onClick={() =>
           addNewPost(
-            id,
+            addId(posts),
             author.current.value,
             title.current.value,
             body.current.value,
