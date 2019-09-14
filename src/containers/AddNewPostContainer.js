@@ -5,6 +5,7 @@ import { addNewPost } from '../actions/index';
 
 const mapStateToProps = state => ({
   posts: state.posts,
+  done: state.done,
 });
 const mapDispatchToProps = {
   addNewPost,

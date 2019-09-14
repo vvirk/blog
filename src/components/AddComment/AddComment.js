@@ -16,7 +16,10 @@ export const AddComment = ({
       }
       value={commentValue}
     />
-    <button onClick={() => postComment(commentValue, match.params.id)}>
+    <button
+      type="button"
+      onClick={() => postComment(commentValue, match.params.id)}
+    >
       add comment
     </button>
   </div>
