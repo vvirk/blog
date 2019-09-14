@@ -4,6 +4,9 @@ import { Preloader } from '../Preloader/Preloader';
 import { Comment } from '../Comment/Comment';
 import { AddCommentContainer } from '../../containers/AddCommentContainer';
 
+// styles
+import s from './styles/postDetails.module.scss';
+
 export class PostDetails extends React.Component {
   componentDidMount() {
     this.props.getPost(this.props.match.params.id);
@@ -11,18 +14,23 @@ export class PostDetails extends React.Component {
 
   render() {
     const { isFetching, post, match } = this.props;
-    console.log(post);
     return (
       <div className="wrap">
         {isFetching ? <Preloader /> : null}
-        <h2>{post.title}</h2>
-        <p>{post.body}</p>
-        <p>{post.author}</p>
-        <p>{post.date}</p>
-        <Link to={`/details/${match.params.id}/edit`}>edit</Link>
-        <p>comments:</p>
+        <h2 className={s.title}>{post.title}</h2>
+        <div className={s.desc}>
+          <p>{post.body}</p>
+        </div>
+        <div className={s.info}>
+          <p>{post.author}</p>
+          <p>{post.date}</p>
+        </div>
+        <Link className={s.link} to={`/details/${match.params.id}/edit`}>
+          edit
+        </Link>
+        <h3 className={s.subtitle}>comments:</h3>
         <AddCommentContainer />
-        <ul>
+        <ul className={s.list}>
           {post.comments
             ? post.comments.map(comment => (
                 <Comment

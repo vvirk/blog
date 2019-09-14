@@ -2,11 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Post } from '../Post/Post';
 
+// styles
+import s from './styles/postsList.module.scss';
+
 export const PostsList = ({ posts }) => {
   return (
     <div>
-      <Link to="/new">ADD POST</Link>
-      <ul>
+      <Link className={s.btn} to="/new">ADD POST</Link>
+      <ul className={s.list}>
         {posts
           ? posts.map(post => (
               <Post

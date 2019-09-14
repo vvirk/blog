@@ -6,13 +6,15 @@ import { AddNewPostContainer } from './containers/AddNewPostContainer';
 import { EditPostContainer } from './containers/EditPostContainer';
 
 export const MainRouter = () => (
-  <div className="content">
-    <Router>
-      <Route path="/" exact component={BlogContainer} />
-      <Route path="/new" exact component={AddNewPostContainer} />
-      <Route path="/details/:id" exact component={PostDetailsContainer} />
-      <Route path="/details/:id/edit" exact component={EditPostContainer} />
-    </Router>
+  <div className="inner">
+    <div className="content">
+      <Router>
+        <Route path="/" exact component={BlogContainer} />
+        <Route path="/new" exact component={AddNewPostContainer} />
+        <Route path="/details/:id" exact component={PostDetailsContainer} />
+        <Route path="/details/:id/edit" exact component={EditPostContainer} />
+      </Router>
+    </div>
   </div>
 );
 

@@ -1,5 +1,40 @@
+@import '../../../styles/variables';
+
 .post {
     padding: 10px;
-    margin: 10px;
-    border: 2px solid black;
+    margin: 10px 0;
+    box-shadow: 0 1px 6px 0 rgba(32,33,36,.28);
+    border-color: rgba(223,225,229,0);
+}
+
+.title {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.desc {
+    padding: 10px 0;
+}
+
+.info {
+    display: flex;
+    &Item {
+        color: $gray;
+        margin-right: 5px;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.link {
+    color: $blue;
+    text-decoration: none;
+    cursor: pointer;
+    &:hover {
+        text-decoration: underline;
+    }
+    &:visited {
+        color: #3232e0;
+    }
 }
