@@ -1,7 +1,68 @@
 @import '../../../styles/variables';
 
+.contnet {
+    padding: 20px;
+    box-shadow: 0 1px 6px 0 rgba(32,33,36,.28);
+    border-color: rgba(223,225,229,0);
+}
+
 .title {
     font-size: 30px;
     font-weight: 700;
     text-align: center;
+    text-transform: uppercase;
+}
+
+.desc {
+    margin: 20px 0;
+    font-size: 18px;
+}
+
+.info {
+    display: flex;
+    margin: 10px 0;
+    padding: 10px 0;
+    &Item {
+        margin-right: 10px;
+        color: $gray;
+        font-size: 16px;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.link {
+    margin: 10px 0;
+    padding: 5px 30px;
+    color: #fff;
+    background: $blue;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 1px 6px 0 rgba(32,33,36,.28);
+    border-color: rgba(223,225,229,0);
+    &:hover {
+        background: lighten($color: $blue, $amount: 10);
+        transition: .5s;
+    }
+}
+
+.list {
+    padding: 20px 0;
+}
+
+.commentsWrap {
+    margin: 20px 0;
+    padding: 20px;
+    box-shadow: 0 1px 6px 0 rgba(32,33,36,.28);
+    border-color: rgba(223,225,229,0);
+}
+.subtitle {
+    font-weight: 700;
+    font-size: 18px;
+    text-transform: uppercase;
 }

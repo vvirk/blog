@@ -1,4 +1,5 @@
 import * as type from './actionTypes';
+import history from '../history';
 
 export const toggleIsFetching = isFetching => ({
   type: type.TOGGLE_IS_FETSHING,
@@ -23,11 +24,6 @@ export const addCommentValue = commentValue => ({
 export const addCommentToPost = comment => ({
   type: type.ADD_COMMENT_TO_POST,
   comment,
-});
-
-export const done = done => ({
-  type: type.DONE,
-  done,
 });
 
 export const changeAuthor = author => ({
@@ -120,7 +116,7 @@ export const addNewPost = (id, author, title, body, date) => async dispatch => {
       },
     });
     await response.json();
-    dispatch(done(true));
+    history.push('/');
   } catch (e) {
     console.log(e);
   }
@@ -143,8 +139,7 @@ export const editPost = (id, author, title, body) => async dispatch => {
       },
     });
     await response.json();
-    dispatch(done(true));
-    dispatch(clearPostInfo(false));
+    history.push('/');
   } catch (e) {
     console.log(e);
   }

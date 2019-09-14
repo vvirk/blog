@@ -17,30 +17,34 @@ export class PostDetails extends React.Component {
     return (
       <div className="wrap">
         {isFetching ? <Preloader /> : null}
-        <h2 className={s.title}>{post.title}</h2>
-        <div className={s.desc}>
-          <p>{post.body}</p>
+        <div className={s.contnet}>
+          <h2 className={s.title}>{post.title}</h2>
+          <div className={s.desc}>
+            <p>{post.body}</p>
+          </div>
+          <Link className={s.link} to={`/details/${match.params.id}/edit`}>
+            edit
+          </Link>
+          <div className={s.info}>
+            <p className={s.infoItem}>{post.author}</p>
+            <p className={s.infoItem}>{post.date}</p>
+          </div>
         </div>
-        <div className={s.info}>
-          <p>{post.author}</p>
-          <p>{post.date}</p>
+        <div className={s.commentsWrap}>
+          <h3 className={s.subtitle}>comments:</h3>
+          <AddCommentContainer />
+          <ul className={s.list}>
+            {post.comments
+              ? post.comments.map(comment => (
+                  <Comment
+                    body={comment.body}
+                    postId={comment.postId}
+                    id={comment.id}
+                  />
+                ))
+              : null}
+          </ul>
         </div>
-        <Link className={s.link} to={`/details/${match.params.id}/edit`}>
-          edit
-        </Link>
-        <h3 className={s.subtitle}>comments:</h3>
-        <AddCommentContainer />
-        <ul className={s.list}>
-          {post.comments
-            ? post.comments.map(comment => (
-                <Comment
-                  body={comment.body}
-                  postId={comment.postId}
-                  id={comment.id}
-                />
-              ))
-            : null}
-        </ul>
       </div>
     );
   }

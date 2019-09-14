@@ -1,5 +1,7 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom';
+
+// styles
+import s from '../AddNewPost/styles/addNewPost.module.scss';
 
 export class EditPost extends React.Component {
   componentDidMount() {
@@ -12,7 +14,6 @@ export class EditPost extends React.Component {
 
   render() {
     const {
-      done,
       id,
       postInfo,
       changeAuthor,
@@ -22,25 +23,29 @@ export class EditPost extends React.Component {
     } = this.props;
     return (
       <div>
-        <h2>Create new post</h2>
+        <h2 className={s.title}>Edit post</h2>
         <input
+          className={s.input}
           value={postInfo.author}
           onChange={e => changeAuthor(e.target.value)}
           type="text"
           placeholder="author"
         />
         <input
+          className={s.input}
           value={postInfo.title}
           onChange={e => changeTitle(e.target.value)}
           type="text"
           placeholder="title"
         />
         <textarea
+          className={s.input}
           value={postInfo.body}
           onChange={e => changeBody(e.target.value)}
           placeholder="post body"
         />
         <button
+          className={s.btn}
           type="button"
           onClick={() =>
             editPost(id, postInfo.author, postInfo.title, postInfo.body)
@@ -48,7 +53,6 @@ export class EditPost extends React.Component {
         >
           EDIT POST
         </button>
-        {done ? <Redirect to="/" /> : null}
       </div>
     );
   }

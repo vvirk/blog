@@ -5,7 +5,6 @@ export const initialState = {
   posts: false,
   post: false,
   comment: '',
-  done: false,
   postInfo: false,
 };
 export const reducer = (state = initialState, action) => {
@@ -53,8 +52,6 @@ export const reducer = (state = initialState, action) => {
       };
     case type.CLEAR_POST_INFO:
       return { ...state, postInfo: action.clear };
-    case type.DONE:
-      return { ...state, done: action.done };
     default:
       return state;
   }

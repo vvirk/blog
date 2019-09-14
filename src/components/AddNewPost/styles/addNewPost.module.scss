@@ -1,0 +1,37 @@
+@import '../../../styles/variables';
+
+.title {
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.input {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border: transparent;
+    border-radius: 5px;
+    box-shadow: 0 1px 6px 0 rgba(32,33,36,.28);
+    border-color: rgba(223,225,229,0);
+    &:focus {
+        border-color: $blue;
+    }
+}
+
+.btn {
+    padding: 10px 30px;
+    background: $blue;
+    border: transparent;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    box-shadow: 0 1px 6px 0 rgba(32,33,36,.28);
+    border-color: rgba(223,225,229,0);
+    cursor: pointer;
+    &:hover {
+        background: lighten($color: $blue, $amount: 10);
+        transition: .5s;
+    }
+}

@@ -1,0 +1,35 @@
+@import '../../../styles/variables';
+
+.wrap {
+    margin: 20px 0;
+}
+
+.input {
+    width: 100%;
+    max-width: 700px;
+    padding: 10px;
+    border: transparent;
+    border-radius: 5px 0 0 5px;
+    box-shadow: 0 1px 6px 0 rgba(32,33,36,.28);
+    border-color: rgba(223,225,229,0);
+    &:focus {
+        border-color: $blue;
+    }
+}
+
+.btn {
+    padding: 11px;
+    background: $blue;
+    border: transparent;
+    border-radius: 0 5px 5px 0;
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    box-shadow: 0 1px 6px 0 rgba(32,33,36,.28);
+    border-color: rgba(223,225,229,0);
+    cursor: pointer;
+    &:hover {
+        background: lighten($color: $blue, $amount: 10);
+        transition: .5s;
+    }
+}
