@@ -8,6 +8,7 @@
  - View list of latest Posts
  - View specific Post
  - Create new comment under Post
+ - Create / Edit Post
 
 ## Workflow
 
